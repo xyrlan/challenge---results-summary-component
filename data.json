@@ -1,0 +1,32 @@
+{ 
+  "primeiro": [
+
+  {
+    "category": "Reaction",
+    "score": 80,
+    "icon": "./assets/images/icon-reaction.svg"
+  }],
+ 
+  "segundo": [
+  {
+    "category": "Memory",
+    "score": 92,
+    "icon": "./assets/images/icon-memory.svg"
+  }],
+  
+  "terceiro": [
+  {
+    "category": "Verbal",
+    "score": 61,
+    "icon": "./assets/images/icon-verbal.svg"
+  }],
+  
+  "quarto": [
+  {
+    "category": "Visual",
+    "score": 72,
+    "icon": "./assets/images/icon-visual.svg"
+  }
+
+]
+}
