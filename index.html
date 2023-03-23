@@ -22,14 +22,14 @@
 <body class="max-h-screen">
   <div class="h-screen w-screen bg-white rounded-3xl flex content-center justify-center flex-wrap font-hanken ">
     
-    <div class="lg:flex w-[45%] lg:h-3/5 lg:flex-row lg:shadow-sm lg:shadow-black rounded-3xl rounded-tl-3xl rounded-tr-3xl max-sm:flex-col max-sm:h-full max-sm:w-full">
+    <div class="lg:flex w-[45%] lg:h-3/5 lg:flex-row lg:shadow-sm lg:shadow-blue-300 rounded-3xl rounded-tl-3xl rounded-tr-3xl max-sm:flex-col max-sm:h-full max-sm:w-full">
 
       
-      <div class="flex flex-col bg-gradient-to-b from-[#5b86e5] to-[#0b2f5f] lg:rounded-3xl  rounded-br-3xl rounded-bl-3xl w-full">
+      <div class="flex flex-col bg-gradient-to-t from-[#6B7AA1] to-[#5E87B0] lg:rounded-3xl  rounded-br-3xl rounded-bl-3xl w-full">
 
           <h4 class="font-semibold text-center mt-10 mb-6 text-[#cac9ea] text-xl rounded-xl max-sm:mt-5">Your Result</h4>
           
-          <div class="rounded-full bg-gradient-to-b from-[#19146c] to-[#1b689c] p-10 w-40 h-40 self-center">
+          <div class="rounded-full bg-gradient-to-b from-[#5E4EA1] to-[#5E4EA100] p-10 w-40 h-40 self-center">
 
             <p class="text-center font-bold text-6xl text-white">76</p> 
             <p class="text-center text-sm text-[#cac9ea]">of 100</p>
@@ -44,32 +44,32 @@
           </div>
       </div>
       
-      <div class="w-full bg-white rounded-tr-3xl rounded-br-3xl">
+      <div class="w-full bg-white rounded-tr-3xl rounded-br-3xl flex flex-col">
         
-        <p class="font-semibold ml-9 mt-10 mb-6 text-[#2C3E50] text-xl max-sm:mt-5">
+        <p class="font-semibold ml-6 mt-10 mb-6 text-[#2C3E50] text-xl max-sm:mt-5">
           Summary
         </p>
     
-      <ul class="flex flex-col">
-        <div id="primeiro" class="p-3 ml-9 mr-9 mb-4 rounded-xl bg-[#FF4D4D] bg-opacity-20">
+        <ul class="flex flex-col">
+        <div id="primeiro" class="p-3 mx-6 my-2 rounded-xl bg-[#FF4D4D] bg-opacity-20 flex justify-between">
         
         </div>
-        <div id="segundo" class=" p-3 ml-9 mr-9 mb-4 bg-[#FFC300] rounded-xl bg-opacity-20">
+        <div id="segundo" class=" p-3 mx-6 my-2 bg-[#FFC300] rounded-xl bg-opacity-20 flex justify-between">
        
         </div>
-        <div id="terceiro" class="p-3 ml-9 mr-9 mb-4 bg-[#008080] rounded-xl bg-opacity-20">
+        <div id="terceiro" class="p-3 mx-6 my-2 bg-[#008080] rounded-xl bg-opacity-20 flex justify-between">
         
         </div>
-        <div id="quarto" class="p-3 ml-9 mr-9 mb-4 bg-[#4D4DFF] rounded-xl bg-opacity-20"> 
+        <div id="quarto" class="p-3 mx-6 my-2 bg-[#4D4DFF] rounded-xl bg-opacity-20 flex justify-between"> 
         
         </div>
       
-      </ul>
-      <div class=" rounded-3xl mx-9 my-5 flex justify-center bg-[#2C3E50]">
-      <button class="text-center text-xl bg-[#2C3E50] rounded-3xl p-3 hover:scale-105 text-white hover:text-[#161349] transition duration-300">
+        </ul>
+      
+        <button class="text-center mx-7 mt-5 text-lg rounded-3xl p-3 hover:scale-105 text-white hover:text-[#161349] bg-gradient-to-b from-[#5E4EA1] to-[#5E4EA1] transition duration-300">
         Continue
         </button>
-      </div> 
+      
       
       </div>
   </div>
@@ -80,66 +80,36 @@
       </footer>
 <script>
   let divColunas = document.querySelector("#primeiro")
-    
-  fetch("data.json").then((response) => {
-      response.json().then((dados) => {
-        dados.primeiro.map((primeiros) => {
-        
-          divColunas.innerHTML += `
-          <div class="flex"><img class="mr-3" src="${primeiros.icon}"> ${primeiros.category} <div class="ml-20 max-sm:ml-32" >${primeiros.score} </div><div class= "text-[#838290] ml-2" > / 100</div></div>
-          `
-         
-        })
-        })
-      })
-  
   let div2 = document.querySelector("#segundo")
-    
-  fetch("data.json").then((response) => {
-      response.json().then((dados) => {
-        dados.segundo.map((segundos) => {
-        
-         
-        
-          div2.innerHTML += `
-          <div class="flex"><img class="mr-3" src="${segundos.icon}"> ${segundos.category} <div class="ml-20 max-sm:ml-32" >${segundos.score} </div> <div class= "text-[#838290] ml-2" > / 100</div> </div>
-          `
-          
-        })
-        })
-      })
   let div3 = document.querySelector("#terceiro")
+  let div4 = document.querySelector("#quarto")
     
   fetch("data.json").then((response) => {
       response.json().then((dados) => {
-        dados.terceiro.map((terceiros) => {
-        
-         
-        
-          div3.innerHTML += `
-          <div class="flex"><img class=" mr-3" src="${terceiros.icon}"> ${terceiros.category} <div class="ml-[93px] max-sm:ml-36" >${terceiros.score} </div> <div class= "text-[#838290] ml-2" > / 100</div> </div>
-          `
+        dados.primeiro.map((primeiros) => { 
           
+          divColunas.innerHTML += `
+         <div class="flex justify-between text-[#FF4D4D]"><img class="mr-2" src="${primeiros.icon}"> ${primeiros.category}</div> <div class= "text-[#2C3E50] flex" >${primeiros.score} <p class="text-[#838398] ml-2"> / 100 </p></div>
+          `
+      
         })
+        dados.segundo.map((primeiros) => {
+        div2.innerHTML += `
+         <div class="flex justify-between text-[#FFC300]"><img class="mr-2" src="${primeiros.icon}"> ${primeiros.category}</div> <div class= "text-[#2C3E50] flex" >${primeiros.score} <p class="text-[#838398] ml-2"> / 100 </p></div>
+          `
+        })
+        dados.terceiro.map((primeiros) => {
+        div3.innerHTML += `
+         <div class="flex justify-between text-[#008080]"><img class="mr-2" src="${primeiros.icon}"> ${primeiros.category}</div> <div class= "text-[#2C3E50] flex" >${primeiros.score}<p class="text-[#838398] ml-2"> / 100 </p></div>
+          `
+        })
+        dados.quarto.map((primeiros) => {
+        div4.innerHTML += `
+         <div class="flex justify-between text-[#4D4DFF]"><img class="mr-2" src="${primeiros.icon}"> ${primeiros.category}</div> <div class= "text-[#2C3E50] flex" >${primeiros.score}<p class="text-[#838398] ml-2"> / 100 </p></div>
+          `
         })
       })
-  let div4 = document.querySelector("#quarto")
-
-    
-  fetch("data.json").then((response) => {
-      response.json().then((dados) => {
-        dados.quarto.map((quartos) => {
-        
-         
-        
-          div4.innerHTML += `
-          <div class="flex"><img class=" mr-3" src="${quartos.icon}"> ${quartos.category} <div class="ml-[93px] max-sm:ml-36" >${quartos.score} </div> <div class= "text-[#838290] ml-2" > / 100</div> </div>
-          `
-          
-        })
-        })
-      })  
-    
-</script>
+    })
+    </script>
 </body>
 </html>
